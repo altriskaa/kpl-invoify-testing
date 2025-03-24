@@ -63,8 +63,8 @@
         "zod": "^3.22.2"
     },
     "devDependencies": {
-        "@sparticuz/chromium": "122.0.0",
         "@next/bundle-analyzer": "^14.0.4",
+        "@sparticuz/chromium": "122.0.0",
         "@types/nodemailer": "^6.4.14",
         "@types/number-to-words": "^1.2.1",
         "@types/react": "^18.2.22",
@@ -72,6 +72,7 @@
         "@types/react-signature-canvas": "^1.0.4",
         "@types/xml2js": "^0.4.13",
         "cross-env": "^7.0.3",
+        "cypress": "^14.2.0",
         "ignore-loader": "^0.1.2",
         "puppeteer": "^21.3.1"
     }
