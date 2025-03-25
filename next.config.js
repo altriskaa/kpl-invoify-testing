@@ -21,4 +21,5 @@ module.exports = withBundleAnalyzer(nextConfig);
 
 module.exports = {
     reactStrictMode: false,
+    
   };
