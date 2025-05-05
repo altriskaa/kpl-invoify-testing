@@ -30,16 +30,6 @@ describe('Invoify Automated Testing', () => {
         //add item
         cy.contains('button', 'Add a new item').dblclick()
 
-
-
-
-
-
-    }) 
-    
-    
-    
-
-        
+    })  
   });
   
