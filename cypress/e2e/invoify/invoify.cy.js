@@ -11,12 +11,12 @@ describe('Invoify Automated Testing', () => {
             .dblclick()      
     })
 
-    // it('dev fill the form', () => {
-    //     cy.contains('button', 'Fill in the form')
-    //         .dblclick()
-    //     cy.get('input[name="sender.name"]')
-    //         .should('have.value', 'John Doe')
-    // })
+    it('dev fill the form', () => {
+        cy.contains('button', 'Fill in the form')
+            .dblclick()
+        cy.get('input[name="sender.name"]')
+            .should('have.value', 'John Doe')
+    })
 
     it('choose template 2', () => {
     
