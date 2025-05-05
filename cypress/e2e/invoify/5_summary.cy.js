@@ -14,20 +14,18 @@ describe("5. Summary", () => {
         cy.get('[role="dialog"]').should("be.visible"); 
     });
 
-    it("should allow drawing a signature", () => {
-        cy.get("label").contains("Signature").click();
-        
-        // Pastikan tab "Draw" aktif
-        cy.get('[role="tab"]').contains("Draw").click();
+    it("drawing a signature", () => {
+      // VALIDASI signature modal terbuka
+      cy.get("label").contains("Signature").click(); // Klik label untuk membuka modal
+      cy.get('[role="dialog"]').should("be.visible"); // Pastikan modal terbuka
 
-        // Interaksi dengan canvas tanda tangan
-        cy.get('canvas').click()
+      // ACTION draw signature
+      cy.get('[role="tab"]').contains("Draw").click(); // Pastikan tab "Draw" aktif
+      cy.get('canvas').click() // Interaksi dengan canvas tanda tangan dengan klik
+      cy.contains("Done").click(); // Klik tombol "Done" untuk menyimpan tanda tangan
 
-        // Klik tombol "Done" untuk menyimpan tanda tangan
-        cy.contains("Done").click();
-
-        // Pastikan modal tertutup
-        cy.get('[role="dialog"]').should("not.exist");
+      // VALIDASI signature terisi
+      cy.get('[role="dialog"]').should("not.exist"); // Pastikan modal tertutup
 
     });
 
@@ -48,7 +46,9 @@ describe("5. Summary", () => {
     })
 
     // SWITCHES
-    it('should have switches in the correct initial state', () => {        
+    it('should toggle the Discount, Tax, and Shipping switches', () => {      
+      
+      // VALIDASI initial state switches
         cy.get('label').contains('Discount').parent().find('button')
           .should('have.attr', 'data-state', 'unchecked');
     
@@ -57,12 +57,10 @@ describe("5. Summary", () => {
     
         cy.get('label').contains('Shipping').parent().find('button')
           .should('have.attr', 'data-state', 'unchecked');
-    });
 
-    it('should toggle the Discount, Tax, and Shipping switches', () => {    
         // Aktifkan Discount
         cy.get('label').contains('Discount').parent().find('button').click()
-          .should('have.attr', 'data-state', 'checked');
+        .should('have.attr', 'data-state', 'checked');
     
         // Aktifkan Tax
         cy.get('label').contains('Tax').parent().find('button').click()
